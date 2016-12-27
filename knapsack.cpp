@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <iomanip>
 #include <utility>
@@ -48,7 +46,7 @@ int main()
 {
 	int n, W;
 	cout << "Enter the number of elements and the maximum weight : " << endl;
-	cin >> W >> n;
+	cin >> n >> W;
 
 	vector <int> weights(n);
 	cout << "Enter the weights of the n elements " << endl;
