@@ -11,7 +11,7 @@
 #include <functional>
 #define rep(i, a, b) for(__typeof(a) i = (a); i < (b); ++i)
 #define all(c) c.begin(), c.end() 
-#define iter(it, c) for(__typeof((c).begin)it = (c).begin; it != (c).end(); it++)
+#define tr(container, it) for(__typeof(container.begin()) it = container.begin(); it != container.end(); it++) 
 #define MAX 1000
 using namespace std;
 bool visited[MAX+1] = {0};
@@ -19,7 +19,6 @@ bool discovered[MAX+1] = {0};
 
 vector < pair <int, int> > post((MAX+1), make_pair(0, 0));
 vector < pair <int, int> > pre((MAX+1), make_pair(0, 0));
-
 
 int t =  0;
 
@@ -70,7 +69,11 @@ int scc(vector < vector <int> >& graph)
 			count ++;
 		}
 	return count;
+
 }
+
+
+
 
 int main()
 {

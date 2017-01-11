@@ -26,16 +26,15 @@ void dfs(int v, vector < vector <int> >& graph)
 	{
 		if(!visited[graph[v][i]])
 			dfs(graph[v][i], graph);
-		else if(visited[graph[v][i]] && !processed[graph[v][i]])
-			flag = 1;
 	}
 	processed[v] = true;
+	cout << v << "  ";
 }
 
 
-void cyclicity(vector < vector<int> >& graph)
+void topsort(vector < vector<int> >& graph)
 {
-	rep(i, 0, int(graph.size()))
+	rep(i, 1, int(graph.size()))
 		if(!visited[i])
 			dfs(i, graph);
 }
@@ -53,6 +52,5 @@ int main()
 		graph[x].push_back(y);
 	}
 
-	cyclicity(graph);
-	(flag == 1 ? cout << 1 << endl : cout << 0 << endl);
+	topsort(graph);
 }
